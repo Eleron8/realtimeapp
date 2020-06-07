@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UehWHI0gdFrXcTof7+maomcVud3C3ulIqaxcfh/O4vx/vJtx62Vl2FaYy26eleme0JHUtjd5u1yEIosUfI1g8w==",
+  "dgSpecHash": "RIpLxq1aNpLssuio+uo3hY4w+BHeKI5CAfjuycwOqf7E9xXdh3byeTvpHqYSKSe+oQQvPvvetv62hYj8yv8dEA==",
   "success": true,
   "projectFilePath": "C:\\cSharpProjects\\RealTimeApp\\RealTimeApp.csproj",
   "expectedPackageFiles": [
@@ -9,11 +9,12 @@
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.4\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.4.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
-    "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.data.sqlclient\\1.0.19269.1\\microsoft.data.sqlclient.1.0.19269.1.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.4\\microsoft.entityframeworkcore.3.1.4.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.4\\microsoft.entityframeworkcore.abstractions.3.1.4.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.4\\microsoft.entityframeworkcore.analyzers.3.1.4.nupkg.sha512",
+    "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.4\\microsoft.entityframeworkcore.design.3.1.4.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.4\\microsoft.entityframeworkcore.relational.3.1.4.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.4\\microsoft.entityframeworkcore.sqlserver.3.1.4.nupkg.sha512",
     "C:\\Users\\Алмас\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.4\\microsoft.extensions.caching.abstractions.3.1.4.nupkg.sha512",
