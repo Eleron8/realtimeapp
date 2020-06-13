@@ -12,13 +12,33 @@
 <body>
     <div class="main-wrapper">
         <header class="header">
-            <nav>
+            <nav class="header__nav main-nav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item">
+                        <a href="#" class="main-nav__link">Home</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#" class="main-nav__link">Find</a>
+                    </li>
+                </ul>
             </nav>
         </header>
         <main class="chat">
             @RenderBody() 
         </main>
-        <aside class="room"></aside>       
+        <aside class="room">
+            <ul class="room__list">
+                <li class="room__item">
+                    <a href="#" class="room__link">Room 1</a>
+                </li>
+                <li class="room__item">
+                    <a href="#" class="room__link">Room 2</a>
+                </li>
+                 <li class="room__item">
+                    <a href="#" class="room__link room__link--btn"> <span class="room__link-icon">+</span> </a>
+                </li>
+            </ul>
+        </aside>       
     </div>
 </body>
 </html>
