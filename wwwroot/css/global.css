@@ -1,0 +1,46 @@
+:root {
+  --brand-color: #4eb3d2;
+  --brand-color--light: #91cef5;
+  --text-color: #030303;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "header header header header"
+    "room chat chat chat";
+}
+
+.header {
+  grid-area: header;
+
+  background-color: var(--brand-color);
+}
+
+.room {
+  grid-area: room;
+
+  background-color: var(--brand-color--light);
+}
+
+.chat {
+  grid-area: chat;
+}
