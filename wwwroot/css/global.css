@@ -122,8 +122,8 @@ ul.room__list {
 }
 
 .chat__messages-item {
-  display: grid;
-  grid-template-columns: minmax(min-content, max-content) 1fr;
+  display: grid; 
+  grid-template-columns: minmax(min-content, max-content) 1fr minmax(min-content, max-content);
   grid-gap: var(--default-space);
 }
 
