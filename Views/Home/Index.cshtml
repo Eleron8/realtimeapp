@@ -1,18 +1,22 @@
-
-<div class="chat-body">
-    <div class="message">
-        <header>Gon:</header>
-        <p>Test message</p>
-        <footer>4:20</footer>
+<div class="chat">
+    <div class="chat__messages">
+        <ul class="chat__messages-list">
+            <li class="chat__messages-item">
+                <p class="chat__user-name"><strong>SS:</strong></p>
+                <p class="chat__user-message">Test message</p>
+                <time class="chat__user-message-time">16:00</time>
+            </li>
+             <li class="chat__messages-item">
+                <p class="chat__user-name"><strong>AM:</strong></p>
+                <p class="chat__user-message">Test message</p>
+                <time class="chat__user-message-time">16:05</time>
+            </li>
+        </ul>
     </div>
-
-    <div class="message">
-        <header>Killua:</header>
-        <p>And????</p>
-        <footer>4:22</footer>
-    </div>
-</div>
-<div class="chat-input">
-    <input type="text">
-    <button>Send</button>
+    <form class="chat__form form-chat">
+        <label class="form-chat__label">
+            <input type="text"  name="message" class="form-chat__input" />
+        </label>
+        <button class="form-chat__submit-btn">Send</button>
+    </form>
 </div>
