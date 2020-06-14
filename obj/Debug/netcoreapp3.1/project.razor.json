@@ -17868,6 +17868,31 @@
         }
       },
       {
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__RoomViewComponentTagHelper",
+        "AssemblyName": "RealTimeApp",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:room",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__RoomViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Room"
+        }
+      },
+      {
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -20533,6 +20558,11 @@
     {
       "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Shared\\Components\\Room\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Room\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -32,7 +32,13 @@ namespace RealTimeApp
             services.AddRazorPages();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(connectionString));
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>(options => {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                
+            })
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
             // services.AddMvc(option => option.EnableEndpointRouting = false) ;
@@ -51,6 +57,8 @@ namespace RealTimeApp
 
             app.UseRouting();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
