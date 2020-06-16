@@ -4,7 +4,7 @@
     <ul class="room__list">
         @foreach(var chat in Model){
             <li class="room__item">
-                <a href="#" class="room__link">@chat.Name</a>
+                <a asp-controller="Home" asp-action="Chat" asp-route-id="@chat.Id" class="room__link">@chat.Name</a>
             </li>
         }
         <li class="room__item">

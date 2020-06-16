@@ -185,9 +185,12 @@ ul.room__list {
 }
 
 .chat__messages {
+  display: flex;
+  flex-direction: column;
 }
 
-.chat__messages-list {
+ul.chat__messages-list {
+  margin-top: auto;
   display: grid;
   grid-gap: var(--default-space);
 }

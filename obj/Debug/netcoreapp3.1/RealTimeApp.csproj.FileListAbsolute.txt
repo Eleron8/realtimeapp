@@ -215,3 +215,4 @@ G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\staticwebassets\RealTimeA
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\RealTimeApp.dll
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\RealTimeApp.pdb
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\RealTimeApp.genruntimeconfig.cache
+G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Home\Chat.cshtml.g.cs
