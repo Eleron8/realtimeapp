@@ -35,7 +35,7 @@
                     <a href="#" class="room__link">Room 2</a>
                 </li>
                  <li class="room__item">
-                    <a href="#" class="room__link room__link--btn"> <span class="room__link-icon">+</span> </a>
+                    <button class="btn room__link room__link--btn"> <span class="room__link-icon">+</span> </button>
                 </li>
             </ul>
         </aside> 
@@ -44,7 +44,7 @@
             <section class="modal__content">
                 <div class="modal__btn-wrapper"><button class="modal__btn btn btn--close">&times;</button></div>
                 <header><h2>Create room</h2></header>
-                <form action="" class="modal__form form">
+                <form asp-controller="Home" asp-action="CreateRoom" class="modal__form form">
                     <label class="form__label">
                         <input class="form__input input input--primary input--full" type="text" name="name" placeholder="room name">
                     </label>
@@ -54,5 +54,7 @@
             </section>
         </div>      
     </div>
+    <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", false);
 </body>
 </html>
