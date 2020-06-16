@@ -142,3 +142,4 @@ G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\staticwebassets\RealTimeApp.St
 G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\RealTimeApp.dll
 G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\RealTimeApp.pdb
 G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\RealTimeApp.genruntimeconfig.cache
+C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Room\Default.cshtml.g.cs

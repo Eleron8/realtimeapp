@@ -12,8 +12,15 @@ namespace RealTimeApp.Home
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 2 "C:\cSharpProjects\RealTimeApp\Views\_ViewImports.cshtml"
+using RealTimeApp.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ea80cbc961f8f9f1c55ffcf21c6837cd996c6c26", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3affe7eda9de864d333ecc184f614475443d6984", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"90cb75c686d1818223ef4128a06a9dc6656796da", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("chat__form form-chat"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -58,7 +65,7 @@ namespace RealTimeApp.Home
         </ul>
     </div>
     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea80cbc961f8f9f1c55ffcf21c6837cd996c6c263873", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea80cbc961f8f9f1c55ffcf21c6837cd996c6c264036", async() => {
                 WriteLiteral("\r\n        <label class=\"form-chat__label\">\r\n            <input type=\"text\"  name=\"message\" class=\"form-chat__input\" />\r\n        </label>\r\n        <button class=\"form-chat__submit-btn\">Send</button>\r\n    ");
             }
             );

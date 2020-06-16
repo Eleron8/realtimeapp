@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using RealTimeApp.Database;
 using System.Linq;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace RealTimeApp.ViewComponets
 {
@@ -13,7 +16,12 @@ namespace RealTimeApp.ViewComponets
         }
         public IViewComponentResult Invoke()
         {
-            var chats = _ctx.Chats.ToList();
+            var userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var chats = _ctx.ChatUsers
+            .Include(x => x.Chat)
+            .Where(x => x.UserId == userId)
+            .Select(x => x.Chat)
+            .ToList();
             return View(chats);
         }
     }
