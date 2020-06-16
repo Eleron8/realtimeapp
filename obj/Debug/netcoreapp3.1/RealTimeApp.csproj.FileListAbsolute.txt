@@ -142,6 +142,7 @@ G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\staticwebassets\RealTimeApp.St
 G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\RealTimeApp.dll
 G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\RealTimeApp.pdb
 G:\Work\Almas\realtimeapp\obj\Debug\netcoreapp3.1\RealTimeApp.genruntimeconfig.cache
+<<<<<<< HEAD
 G:\Work\Almas\realtimeapp-back\bin\Debug\netcoreapp3.1\appsettings.Development.json
 G:\Work\Almas\realtimeapp-back\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 G:\Work\Almas\realtimeapp-back\bin\Debug\netcoreapp3.1\appsettings.json
@@ -216,3 +217,6 @@ G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\RealTimeApp.dll
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\RealTimeApp.pdb
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\RealTimeApp.genruntimeconfig.cache
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Home\Chat.cshtml.g.cs
+=======
+C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Room\Default.cshtml.g.cs
+>>>>>>> cac4d8da9ff44a7a073cf4cc1fab972eb4c58b4a

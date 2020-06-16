@@ -5,17 +5,28 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 
 namespace RealTimeApp.Controllers
  {
+    [Authorize]
     public class HomeController : Controller 
     {
         private AppDbContext _ctx;
 
         public HomeController(AppDbContext ctx) => _ctx = ctx;
         
-        public IActionResult Index() => View();
+        public IActionResult Index()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var chats = _ctx.Chats
+                .Include(x => x.Users)
+                .Where(x => !x.Users.Any(y => y.UserId == userId))
+                .ToList();
+            return View(chats);
+        }  
 
         [HttpGet("{id}")]
         public IActionResult Chat(int id)
@@ -26,13 +37,14 @@ namespace RealTimeApp.Controllers
             return View();
         }
 
+       
         [HttpPost]
        public async Task<IActionResult> CreateMessage(int chatId, string msg)
        {
            var message = new Message {
                ChatId = chatId,
                Text = msg,
-               Name = "Default",
+               Name = User.Identity.Name,
                TimeStamp = DateTime.Now
            };
 
@@ -47,14 +59,35 @@ namespace RealTimeApp.Controllers
 
         public async Task<IActionResult> CreateRoom(string name)
         {
-            _ctx.Chats.Add(new Chat {
+            var chat = new Chat {
                 Name = name,
                 Type = ChatType.Room
+            };
+            chat.Users.Add(new ChatUser{
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
+                Role = UserRole.Admin
             });
+            _ctx.Chats.Add(chat);
 
             await _ctx.SaveChangesAsync();
 
             return RedirectToAction("Index");
+        }
+
+         [HttpPost]
+        public async Task<IActionResult> JoinRoom(int roomId)
+        {
+            var chatUser = new ChatUser{
+                ChatId = roomId,
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
+                Role = UserRole.Admin
+            };
+
+            _ctx.ChatUsers.Add(chatUser);
+
+            await _ctx.SaveChangesAsync();
+
+            return RedirectToAction("Chat", "Home", new { id = roomId });
         }
     }
 }

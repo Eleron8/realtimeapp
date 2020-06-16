@@ -42,6 +42,7 @@ namespace RealTimeApp
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
             // services.AddMvc(option => option.EnableEndpointRouting = false) ;
+            services.AddSignalR();
         
         }
 
@@ -59,6 +60,8 @@ namespace RealTimeApp
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            // app.UseSignalR(app, );
 
             app.UseEndpoints(endpoints =>
             {
