@@ -1,8 +1,8 @@
 <div>
-    <form asp-controller="Account" asp-action="Login">
-        <input type="text" name="username" placeholder="name" />
-        <input type="password" name="password" placeholder="passowrd" />
-        <button>Log in</button>
+    <form asp-controller="Account" asp-action="Login" class="form form-auth">
+        <input type="text" name="username" placeholder="name" class="input input--primary" />
+        <input type="password" name="password" placeholder="passowrd" class="input input--primary"  />
+        <button class="btn btn--form">Log in</button>
     </form>
     <div>
         <a asp-controller="Account" asp-action="Registration">Sign up</a>

@@ -23,9 +23,12 @@
                 </ul>
             </nav>
         </header>
-        @if(User.Identity.IsAuthenticated) {
-            <vc:room></vc:room>
-        }
+
+        <aside class="room">
+            @if(User.Identity.IsAuthenticated) {
+                <vc:room></vc:room>
+            }
+        </aside>
 
         <main class="main-content">
             @RenderBody() 

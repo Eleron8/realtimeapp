@@ -101,8 +101,9 @@ body {
 .form {
 }
 
+
 .header {
-  grid-area: header;
+  grid-area: header; 
 
   background-color: var(--brand-color);
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
@@ -241,6 +242,13 @@ ul.chat__messages-list {
   height: 100%;
   border-radius: 0;
   border: 1px solid var(--brand-color--light);
+}
+
+.form-auth {
+  display: grid;  
+  grid-auto-flow: column;
+  grid-gap: var(--default-space);
+  max-width: 530px; 
 }
 
 /**
