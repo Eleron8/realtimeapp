@@ -20569,6 +20569,11 @@
       "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Home\\Chat.cshtml",
+      "TargetPath": "Views\\Home\\Chat.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"
