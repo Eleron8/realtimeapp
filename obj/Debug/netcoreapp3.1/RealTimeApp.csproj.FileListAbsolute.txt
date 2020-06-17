@@ -222,7 +222,7 @@ C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Compone
 >>>>>>> cac4d8da9ff44a7a073cf4cc1fab972eb4c58b4a
 C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Chat.cshtml.g.cs
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
-G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 >>>>>>> bbae43c58ad1fb33ca228308d2bfdd5e0832b523
+G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Account\Registration.cshtml.g.cs
