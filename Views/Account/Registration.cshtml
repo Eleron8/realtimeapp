@@ -2,6 +2,9 @@
     <form asp-controller="Account" asp-action="Registration" class="form form-auth">
         <input type="text" name="username" placeholder="name" required class="input input--primary"/>
         <input type="password" name="password" placeholder="passoword" required class="input input--primary"/>
-        <button class="btn btn--form">Sign up</button>
+        <button class="btn btn--form" class="link">Sign up</button>
     </form>
+     <div>
+        <a asp-controller="Account" asp-action="Login" class="link">Log in</a>
+    </div>
 </div>

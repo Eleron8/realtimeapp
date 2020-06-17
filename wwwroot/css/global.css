@@ -21,7 +21,24 @@ html {
 }
 
 body {
+  overflow: hidden;
+  max-height: 100vh;
+
   font-family: "Roboto", sans-serif;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
 }
 
 .main-wrapper {
@@ -98,12 +115,29 @@ body {
   border-color: var(--brand-color);
 }
 
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0;
+
+  color: var(--brand-color);
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+
+  transition: var(--default-transition);
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.7;
+}
+
 .form {
 }
 
-
 .header {
-  grid-area: header; 
+  grid-area: header;
 
   background-color: var(--brand-color);
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
@@ -168,6 +202,10 @@ ul.room__list {
   transition: var(--default-transition);
 }
 
+.room__link.active {
+  border: 2px solid;
+}
+
 .room__link:hover,
 .room__link:focus {
   box-shadow: 0px 0px 0px transparent;
@@ -188,6 +226,29 @@ ul.room__list {
 .chat__messages {
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 180px);
+  overflow: auto;
+}
+
+.chat__user-icon {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  background: var(--brand-color--light);
+  border-radius: 50%;
+}
+
+.chat__user-message {
+  overflow-wrap: break-word;
+  overflow: auto;
 }
 
 ul.chat__messages-list {
@@ -200,9 +261,10 @@ ul.chat__messages-list {
   display: grid;
   grid-template-columns: minmax(min-content, max-content) 1fr minmax(
       min-content,
-      max-content
+      200px
     );
   grid-gap: var(--default-space);
+  align-items: center;
 }
 
 .chat__form {
@@ -245,10 +307,10 @@ ul.chat__messages-list {
 }
 
 .form-auth {
-  display: grid;  
+  display: grid;
   grid-auto-flow: column;
   grid-gap: var(--default-space);
-  max-width: 530px; 
+  max-width: 530px;
 }
 
 /**
