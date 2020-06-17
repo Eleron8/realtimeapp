@@ -2,13 +2,14 @@
 <div class="chat">
     <div class="chat__messages">
         <ul class="chat__messages-list">
-            @foreach(var message in Model.Messages) {
+@foreach(var message in Model.Messages) {
                 <li class="chat__messages-item">
                     <p class="chat__user-name"><strong>@message.Name</strong></p>
                     <p class="chat__user-message">@message.Text</p>
-                    <time class="chat__user-message-time"></time>
+                    <time class="chat__user-message-time">@message.TimeStamp</time>
                 </li>
             }
+            @* } *@
         </ul>
     </div>
     <form class="chat__form form-chat" asp-controller="Home" asp-action="CreateMessage">
