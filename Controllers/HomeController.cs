@@ -7,12 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using System.Data;
+using System.Diagnostics;
 
 
 namespace RealTimeApp.Controllers
  {
     [Authorize]
-    public class HomeController : Controller 
+    public class HomeController : Controller                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     {
         private AppDbContext _ctx;
 
@@ -63,6 +65,7 @@ namespace RealTimeApp.Controllers
                 Name = name,
                 Type = ChatType.Room
             };
+            
             chat.Users.Add(new ChatUser{
                 UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
                 Role = UserRole.Admin

@@ -27,7 +27,7 @@ namespace RealTimeApp.Controllers
             if(user != null)
             {
                 var result = await _signInManager.PasswordSignInAsync(user, password, false, false);
-            
+                       
                 if(result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
