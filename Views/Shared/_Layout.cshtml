@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RealTimeApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <link rel="stylesheet" href="~/css/global.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="header">
+            <nav class="header__nav main-nav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item">
+                        <a href="#" class="main-nav__link">Home</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#" class="main-nav__link">Find</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        @if(User.Identity.IsAuthenticated) {
+            <vc:room></vc:room>
+        }
+
+        <main class="main-content">
+            @RenderBody() 
+        </main>
+
+        <div class="modal">
+            <section class="modal__content">
+                <div class="modal__btn-wrapper"><button class="modal__btn btn btn--close">&times;</button></div>
+                <header><h2>Create room</h2></header>
+                <form asp-controller="Home" asp-action="CreateRoom" class="modal__form form">
+                    <label class="form__label">
+                        <input class="form__input input input--primary input--full" type="text" name="name" placeholder="room name">
+                    </label>
+                    <button class="btn btn--form">Create</button>
+                </form>
+                <footer></footer>
+            </section>
+        </div>      
+    </div>
+    <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", false);
+</body>
+</html>
