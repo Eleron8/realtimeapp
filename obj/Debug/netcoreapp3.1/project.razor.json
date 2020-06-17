@@ -20561,8 +20561,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Account\\Register.cshtml",
+      "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Shared\\Components\\Room\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\Room\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\cSharpProjects\\RealTimeApp\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
     },
     {

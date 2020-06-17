@@ -42,6 +42,7 @@ namespace RealTimeApp
             .AddDefaultTokenProviders();
             // services.AddMvc(option => option.EnableEndpointRouting = false) ;
             services.AddSignalR();
+            services.AddHttpContextAccessor();
         
         }
 
