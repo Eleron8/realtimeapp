@@ -6,9 +6,10 @@
                 <li class="chat__messages-item">
                     <p class="chat__user-name"><strong>@message.Name</strong></p>
                     <p class="chat__user-message">@message.Text</p>
-                    <time class="chat__user-message-time"></time>
+                    <time class="chat__user-message-time">@message.TimeStamp</time>
                 </li>
             }
+             
         </ul>
     </div>
     <form class="chat__form form-chat" asp-controller="Home" asp-action="CreateMessage">
