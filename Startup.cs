@@ -59,8 +59,8 @@ namespace RealTimeApp
             app.UseRouting();
             app.UseStaticFiles();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization(); 
 
             // app.UseSignalR(app, );
 
