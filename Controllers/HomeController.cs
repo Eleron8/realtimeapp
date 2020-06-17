@@ -36,7 +36,7 @@ namespace RealTimeApp.Controllers
             var chat = _ctx.Chats
                 .Include(x => x.Messages)
                 .FirstOrDefault(x => x.Id == id);
-            return View();
+            return View(chat);
         }
 
        
