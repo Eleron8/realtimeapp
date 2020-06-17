@@ -23,11 +23,13 @@
                 </ul>
             </nav>
         </header>
+        @if(User.Identity.IsAuthenticated) {
+            <vc:room></vc:room>
+        }
+
         <main class="main-content">
             @RenderBody() 
         </main>
-
-        <vc:room></vc:room>
 
         <div class="modal">
             <section class="modal__content">
