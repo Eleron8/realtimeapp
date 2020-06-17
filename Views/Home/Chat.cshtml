@@ -6,13 +6,14 @@
                 <li class="chat__messages-item">
                     <p class="chat__user-name"><strong>@message.Name</strong></p>
                     <p class="chat__user-message">@message.Text</p>
-                    <time class="chat__user-message-time">@message.Timestamp</time>
+                    <time class="chat__user-message-time"></time>
                 </li>
             }
         </ul>
     </div>
-    <form class="chat__form form-chat">
+    <form class="chat__form form-chat" asp-controller="Home" asp-action="CreateMessage">
         <label class="form-chat__label">
+            <input type="hidden" value="@Model.Id" name="chatId">
             <input type="text"  name="message" class="form-chat__input" />
         </label>
         <button class="form-chat__submit-btn btn btn--form">Send</button>

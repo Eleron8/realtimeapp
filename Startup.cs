@@ -17,8 +17,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace RealTimeApp
 {
-    public class Startup
-    {
+    public class Startup   {
         private IConfiguration _config;
         public Startup(IConfiguration config) => _config = config;
 
