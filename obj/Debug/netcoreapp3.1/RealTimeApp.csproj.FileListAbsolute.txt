@@ -224,4 +224,4 @@ C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Chat.csht
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Accout\Login.cshtml.g.cs
 G:\Work\Almas\realtimeapp-back\obj\Debug\netcoreapp3.1\Razor\Views\Accout\Register.cshtml.g.cs
 C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
-C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\cSharpProjects\RealTimeApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Registration.cshtml.g.cs
