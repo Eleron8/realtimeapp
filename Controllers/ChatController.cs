@@ -42,7 +42,11 @@ namespace RealTimeApp.Controllers
            ctx.Messages.Add(Message);
            await ctx.SaveChangesAsync();
 
-                await _hubContext.Clients.Group(roomName).SendAsync("RecieveMessage", Message);
+                await _hubContext.Clients.Group(roomName).SendAsync("RecieveMessage", new {
+                    Text = Message.Text,
+                    Name = Message.Name,
+                    TimeStamp = Message.TimeStamp.ToString("dd/MM/yyyy hh:mm:ss")
+                });
                 return Ok();
         }
     }

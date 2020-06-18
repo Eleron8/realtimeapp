@@ -4,6 +4,8 @@ using System.Linq;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using RealTimeApp.Models;
+
 
 
 namespace RealTimeApp.ViewComponets
@@ -24,7 +26,7 @@ namespace RealTimeApp.ViewComponets
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var chats = _ctx.ChatUsers
             .Include(x => x.Chat)
-            .Where(x => x.UserId == userId)
+            .Where(x => x.UserId == userId && x.Chat.Type == ChatType.Room)
             .Select(x => x.Chat)
             .ToList();
             return View(chats);
