@@ -218,6 +218,7 @@ ul.room__list {
   overflow: auto;
 
   font-size: 18px;
+  text-align: center;
   color: var(--text-color);
   text-decoration: none;
   word-break: break-word;
