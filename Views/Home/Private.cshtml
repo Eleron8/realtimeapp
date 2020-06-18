@@ -11,7 +11,7 @@
 <ul class="room__list">
     @foreach(var chat in Model){
         <li class="room__item">
-            <a asp-controller="Home" asp-action="JoinRoom" asp-route-id="@chat.Id" 
+            <a asp-controller="Home" asp-action="Chat" asp-route-id="@chat.Id" 
                 class="room__link"
             > @chat.Users.FirstOrDefault(x => x.UserId != userId).User.UserName; </a>
         </li>
