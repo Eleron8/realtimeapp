@@ -15,10 +15,11 @@
              
         </ul>
     </div>
-    <form class="chat__form form-chat" asp-controller="Home" asp-action="CreateMessage">
+    <form class="chat__form form-chat" onsubmit="sendMessage(event)" asp-controller="Home" asp-action="CreateMessage">
         <label class="form-chat__label">
             <input type="hidden" value="@Model.Id" name="chatId">
-            <input type="text"  name="msg" class="form-chat__input" />
+            <input type="hidden" value="@Model.Name" name="roomName">
+            <input type="text"  name="message" class="form-chat__input" />
         </label>
         <button class="form-chat__submit-btn btn btn--form">Send</button>
     </form>
@@ -33,8 +34,29 @@
 
         let _connectionId = ''; 
 
-        connection.on("ReceiveMessage", function (data){
-            console.log(data);
+        connection.on("ReceiveMessage", function ({timeStamp, text, name}) {
+            alert('ss');
+            const msgList = document.querySelector('.chat__messages-list');
+            const fragment = new DocumentFragment();
+            const li = document.createElement('li');
+            li.innerHTML  = `
+                <p class="chat__user-name">
+                    <strong class="sr-only">${name}</strong>
+                    <span class="chat__user-icon">${name.slice(0, 2)}</span>
+                </p>
+                <p class="chat__user-message">${text}</p>
+                <time class="chat__user-message-time">${timeStamp}</time>
+            `;
+            fragment.appendChild(li);
+            msgList.appendChild(fragment);
+        });
+
+        connection.on("ReceiveMessage", (user, message) => {
+            console.log('recived');
+        });
+
+        connection.on("newMessage", function ({timeStamp, text, name}) {
+            alert('ss');
         });
 
         connection.start().then(function(){
@@ -49,13 +71,27 @@
         });
 
   let joinRoom = function() {
-      const URL = '/Chat/JoinRoom/' + _connectionId + '/@Model.Name'
-      connection.invoke(URL).then(res => {
+      const URL = '/joinRoom/' + _connectionId + '/@Model.Name'
+      axios.post(URL, null).then(res => {
           console.log("Joined in room", res);
       })
       .catch(err => {
           console.error("Failed to join in room", err);
       })
+  }
+
+  let sendMessage = function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    axios.post('/Chat/SendMessage/', data).then((res) => {
+        const input = form.querySelector('input[name="message"]');
+        input.value = '';
+        input.focus();
+        console.log('Message send');
+    }).catch((e) => {
+        console.error('Error while sending message', e);
+    })
   }
     </script>
 }

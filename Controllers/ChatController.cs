@@ -17,13 +17,13 @@ namespace RealTimeApp.Controllers
         {
             _hubContext = hubContext;
         }
-        [HttpPost("{connectionId}/{roomName}")]
+        [HttpPost("joinRoom/{connectionId}/{roomName}")]
         public async Task<IActionResult> JoinRoom(string connectionId, string roomName)
         {
                 await _hubContext.Groups.AddToGroupAsync(connectionId, roomName);
                 return Ok();
         }
-        [HttpPost("[action]/{connectionId}/{roomName}")]
+        [HttpPost("leaveRoom/{connectionId}/{roomName}")]
         public async Task<IActionResult> LeaveRoom(string connectionId, string roomName)
         {
                 await _hubContext.Groups.RemoveFromGroupAsync(connectionId, roomName);
