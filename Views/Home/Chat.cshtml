@@ -35,10 +35,10 @@
         let _connectionId = ''; 
 
         connection.on("RecieveMessage", function ({timeStamp, text, name}) {
-            alert('ss');
             const msgList = document.querySelector('.chat__messages-list');
             const fragment = new DocumentFragment();
             const li = document.createElement('li');
+            li.classList.add('chat__messages-item');
             li.innerHTML  = `
                 <p class="chat__user-name">
                     <strong class="sr-only">${name}</strong>
