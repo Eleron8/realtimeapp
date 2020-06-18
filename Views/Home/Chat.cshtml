@@ -9,7 +9,7 @@
                         <span class="chat__user-icon">@message.Name.Substring(0, 2)</span>
                     </p>
                     <p class="chat__user-message">@message.Text</p>
-                    <time class="chat__user-message-time">@message.TimeStamp</time>
+                    <time class="chat__user-message-time">@message.TimeStamp</time> 
                 </li>
             }
              
@@ -30,9 +30,12 @@
     <script src="~/js/axios.min.js"></script>
     <script>
         let connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        const lastMsg = document.querySelector('.chat__messages-list > .chat__messages-item:last-child');
+        if (lastMsg)
+            lastMsg.scrollIntoView();
 
         let _connectionId = ''; 
-
+ 
         connection.on("RecieveMessage", function ({timeStamp, text, name}) {
             const msgList = document.querySelector('.chat__messages-list');
             const fragment = new DocumentFragment();
@@ -48,6 +51,7 @@
             `;
             fragment.appendChild(li);
             msgList.appendChild(fragment);
+            li.scrollIntoView();
         });
 
         
