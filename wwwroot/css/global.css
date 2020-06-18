@@ -20,6 +20,26 @@ html {
   box-sizing: inherit;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--brand-color); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-color--light); 
+}
+
 body {
   overflow: hidden;
   max-height: 100vh;
@@ -174,6 +194,8 @@ body {
 
 .room {
   grid-area: room;
+  max-height: 100vh;
+  overflow: auto;
 
   background-color: var(--brand-color--light);
 }
@@ -198,7 +220,7 @@ ul.room__list {
   font-size: 18px;
   color: var(--text-color);
   text-decoration: none;
-  word-break: break-all;
+  word-break: break-word;
 
   box-shadow: 0px 0px 7px 2px var(--brand-color);
   background-color: var(--brand-color);
