@@ -55,10 +55,6 @@
             console.log('recived');
         });
 
-        connection.on("newMessage", function ({timeStamp, text, name}) {
-            alert('ss');
-        });
-
         connection.start().then(function(){
             connection.invoke('getConnectionId').then(function(connectionId){
                 _connectionId = connectionId
