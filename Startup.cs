@@ -68,7 +68,8 @@ namespace RealTimeApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<ChatHub>("/chatHub");
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
+                // endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -17,7 +17,7 @@ namespace RealTimeApp.Controllers
         {
             _hubContext = hubContext;
         }
-        [HttpPost("[action]/{connectionId}/{roomName}")]
+        [HttpPost("{connectionId}/{roomName}")]
         public async Task<IActionResult> JoinRoom(string connectionId, string roomName)
         {
                 await _hubContext.Groups.AddToGroupAsync(connectionId, roomName);
