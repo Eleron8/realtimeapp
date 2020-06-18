@@ -17,23 +17,23 @@ namespace RealTimeApp.Controllers
         {
             _hubContext = hubContext;
         }
-        [HttpPost("joinRoom/{connectionId}/{roomName}")]
-        public async Task<IActionResult> JoinRoom(string connectionId, string roomName)
+        [HttpPost("joinRoom/{connectionId}/{roomId}")]
+        public async Task<IActionResult> JoinRoom(string connectionId, string roomId)
         {
-                await _hubContext.Groups.AddToGroupAsync(connectionId, roomName);
+                await _hubContext.Groups.AddToGroupAsync(connectionId, roomId);
                 return Ok();
         }
-        [HttpPost("leaveRoom/{connectionId}/{roomName}")]
-        public async Task<IActionResult> LeaveRoom(string connectionId, string roomName)
+        [HttpPost("leaveRoom/{connectionId}/{roomId}")]
+        public async Task<IActionResult> LeaveRoom(string connectionId, string roomId)
         {
-                await _hubContext.Groups.RemoveFromGroupAsync(connectionId, roomName);
+                await _hubContext.Groups.RemoveFromGroupAsync(connectionId, roomId);
                 return Ok();
         }
 
-        public async Task<IActionResult> SendMessage(int chatId, string message, string roomName, [FromServices] AppDbContext ctx)
+        public async Task<IActionResult> SendMessage(int roomId, string message, [FromServices] AppDbContext ctx)
         {
                 var Message = new Message {
-                    ChatId = chatId,
+                    ChatId = roomId,
                     Text = message,
                     Name = User.Identity.Name,
                     TimeStamp = DateTime.Now
@@ -42,7 +42,7 @@ namespace RealTimeApp.Controllers
            ctx.Messages.Add(Message);
            await ctx.SaveChangesAsync();
 
-                await _hubContext.Clients.Group(roomName).SendAsync("RecieveMessage", new {
+                await _hubContext.Clients.Group(roomId.ToString()).SendAsync("RecieveMessage", new {
                     Text = Message.Text,
                     Name = Message.Name,
                     TimeStamp = Message.TimeStamp.ToString("dd/MM/yyyy hh:mm:ss")
