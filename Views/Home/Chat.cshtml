@@ -34,7 +34,7 @@
 
         let _connectionId = ''; 
 
-        connection.on("ReceiveMessage", function ({timeStamp, text, name}) {
+        connection.on("RecieveMessage", function ({timeStamp, text, name}) {
             alert('ss');
             const msgList = document.querySelector('.chat__messages-list');
             const fragment = new DocumentFragment();
@@ -51,9 +51,7 @@
             msgList.appendChild(fragment);
         });
 
-        connection.on("ReceiveMessage", (user, message) => {
-            console.log('recived');
-        });
+        
 
         connection.start().then(function(){
             connection.invoke('getConnectionId').then(function(connectionId){
