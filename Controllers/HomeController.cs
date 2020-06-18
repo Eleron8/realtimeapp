@@ -44,6 +44,7 @@ namespace RealTimeApp.Controllers
         public IActionResult Private()
         {
             var chats = _ctx.Chats.Include(x => x.Users)
+                .ThenInclude(x => x.User)
                 .Where(x => x.Type == ChatType.Private && x.Users.Any(y => 
                     y.UserId == User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 .ToList();
