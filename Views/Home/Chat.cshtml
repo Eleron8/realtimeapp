@@ -39,6 +39,7 @@
         connection.start().then(function(){
             connection.invoke('getConnectionId').then(function(connectionId){
                 _connectionId = connectionId
+                joinRoom();
             })
         })
         .catch(function(err){
@@ -54,6 +55,16 @@
                 console.err("Failed to join in room", res);
             })
         }
+
+        connection.start().then(function(){
+            connection.invoke('getConnectionId').then(function(connectionId){
+                _connectionId = connectionId
+                joinRoom();
+            })
+        })
+        .catch(function(err){
+            console.log(err);
+        })
 
     </script>
 }
