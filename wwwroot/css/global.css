@@ -192,6 +192,14 @@ body {
   outline: none;
 }
 
+.main-wrapper__nav-list {
+  width: 100%;
+}
+
+.main-nav__item-log-out {
+  margin-left: auto;
+}
+
 .room {
   grid-area: room;
   max-height: 100vh;

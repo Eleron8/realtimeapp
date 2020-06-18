@@ -13,7 +13,7 @@
     <div class="main-wrapper">
         <header class="header">
             <nav class="header__nav main-nav">
-                <ul class="main-nav__list">
+                <ul class="main-nav__list main-wrapper__nav-list">
                     <li class="main-nav__item">
                         <a asp-controller="Home" asp-action="Index" class="main-nav__link">Home</a>
                     </li>
@@ -23,7 +23,15 @@
                      <li class="main-nav__item">
                         <a asp-controller="Home" asp-action="Private" class="main-nav__link">Private</a>
                     </li>
+
+                     @if(User.Identity.IsAuthenticated) {
+                        <li class="main-nav__item  main-nav__item-log-out">
+                            <a asp-controller="AccountController" asp-action="LogOut" class="main-nav__link">Log out</a>
+                        </li>
+                    }
                 </ul>
+
+               
             </nav>
         </header>
 
