@@ -58,7 +58,8 @@ namespace RealTimeApp.Controllers
             return RedirectToAction("Registration", "Account");
         }
 
-
+        
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
