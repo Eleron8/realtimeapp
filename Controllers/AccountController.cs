@@ -62,7 +62,7 @@ namespace RealTimeApp.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return View();
+            return RedirectToAction("Login", "Account");
         }
     }
 }
