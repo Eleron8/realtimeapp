@@ -12,6 +12,7 @@ using RealTimeApp.Database;
 using RealTimeApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using RealTimeApp.Hubs;
 
 
 
@@ -67,6 +68,8 @@ namespace RealTimeApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapHub<ChatHub>("/chatHub");
                 // endpoints.MapGet("/", async context =>
                 // {
                 //     await context.Response.WriteAsync("Hello World!");
