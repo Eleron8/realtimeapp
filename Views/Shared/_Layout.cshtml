@@ -15,10 +15,13 @@
             <nav class="header__nav main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a href="/" class="main-nav__link">Home</a>
+                        <a asp-controller="Home" asp-action="Index" class="main-nav__link">Home</a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#" class="main-nav__link">Find</a>
+                        <a asp-controller="Home" asp-action="Find"  class="main-nav__link">Find</a>
+                    </li>
+                     <li class="main-nav__item">
+                        <a asp-controller="Home" asp-action="Private" class="main-nav__link">Private</a>
                     </li>
                 </ul>
             </nav>

@@ -1,18 +1,15 @@
 @model IEnumerable<Chat>
-
-
-    <ul class="room__list">
-        @foreach(var chat in Model){
-            <li class="room__item">
-                <a asp-controller="Home" asp-action="Chat" asp-route-id="@chat.Id" 
-                    class=@(ViewContext.RouteData.Values["Id"] != null && ViewContext.RouteData.Values["Id"].ToString() == chat.Id.ToString() ? "room__link active" : "room__link")
-                >@chat.Name</a>
-            </li>
-        }
+<ul class="room__list">
+    @foreach(var chat in Model){
         <li class="room__item">
-            <button class="btn room__link room__link--btn"> <span class="room__link-icon">+</span> </button>
-        </li>        
-    </ul>     
-</aside> 
+            <a asp-controller="Home" asp-action="Chat" asp-route-id="@chat.Id" 
+                class=@(ViewContext.RouteData.Values["Id"] != null && ViewContext.RouteData.Values["Id"].ToString() == chat.Id.ToString() ? "room__link active" : "room__link")
+            >@chat.Name</a>
+        </li>
+    }
+    <li class="room__item">
+        <button class="btn room__link room__link--btn"> <span class="room__link-icon">+</span> </button>
+    </li>        
+</ul>     
 
 
