@@ -30,7 +30,7 @@ namespace RealTimeApp.Controllers
                 return Ok();
         }
 
-        public async Task<IActionResult> SendMessage(string roomName, string message, int chatId, [FromServices] AppDbContext ctx)
+        public async Task<IActionResult> SendMessage(int chatId, string message, string roomName, [FromServices] AppDbContext ctx)
         {
                 var Message = new Message {
                     ChatId = chatId,
