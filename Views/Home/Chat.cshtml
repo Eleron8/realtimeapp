@@ -24,54 +24,39 @@
     </form>
 </div>
 
-@section scrits {
+@section scripts {
     <script src="~/js/signalr.min.js"></script>
-
+    <script src="~/js/axios.min.js"></script>
+    @* <script src="~/js/chat.js"></script> *@
     <script>
-        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        let connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-        var _connectionId = '';
+  let _connectionId = '';
 
-        connection.on("ReceiveMessage", function (data){
-            console.log(data);
-        });
+  connection.on("ReceiveMessage", function (data){
+      console.log(data);
+  });
 
-        connection.start().then(function(){
-            connection.invoke('getConnectionId').then(function(connectionId){
-                _connectionId = connectionId
-                joinRoom();
-            })
-        })
-        .catch(function(err){
-            console.log(err);
-        });
+  connection.start().then(function(){
+      connection.invoke('getConnectionId').then(function(connectionId){
+          _connectionId = connectionId
+          // debugger;
+          joinRoom();
+      })
+  })
+  .catch(function(err){
+      console.log(err);
+  });
 
-        var joinRoom = function() {
-            var url = '/Chat/JoinRoom/' + _connectionId + '/@Model.Name'
-            axios.post(url, null).then(res => {
-                console.log("Joined in room", res);
-            })
-            .catch(err => {
-                console.err("Failed to join in room", res);
-            })
-        }
-
-        connection.start().then(function(){
-            connection.invoke('getConnectionId').then(function(connectionId){
-                _connectionId = connectionId
-                joinRoom();
-            })
-        })
-        .catch(function(err){
-            console.log(err);
-        })
-
+  let joinRoom = function() {
+      const URL = '/Chat/JoinRoom/' + _connectionId + '/@Model.Name'
+      axios.post(URL, null).then(res => {
+          console.log("Joined in room", res);
+      })
+      .catch(err => {
+          console.error("Failed to join in room", err);
+      })
+  }
     </script>
 }
-
-    <!-- @section scripts {
-        <script src="~/js/signalr.min.js"></script>
-        <script src="~/js/axios.min.js"></script>
-        @* <script src="~/js/chat.js"></script> *@
-    } -->
 </div>

@@ -4,28 +4,44 @@ function chat() {
     return;
   }
 
-  const conntection = new signalR.HubConnectionBuilder()
-    .withUrl("/chatHub")
-    .build();
+  let connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-  let connectionId = null;
+  let _connectionId = '';
 
-  conntection.on("RecieveMessage", function (data) {
-    console.log("RecieveMessage", data);
+  connection.on("ReceiveMessage", function (data){
+      console.log(data);
   });
 
-  const joinRomm = function () {
-    const URL = `/Chat/JoinRoom/${connectionId}/@Model.Name`;
-
-    axios
-      .post(URL, null)
-      .then((res) => {
-          console.log('Joined to room')
+  connection.start().then(function(){
+      connection.invoke('getConnectionId').then(function(connectionId){
+          _connectionId = connectionId
+          // debugger;
+          joinRoom();
       })
-      .catch((e) => {
-        console.error(e);
-      });
-  };
+  })
+  .catch(function(err){
+      console.log(err);
+  });
+
+  let joinRoom = function() {
+      const URL = '/Chat/JoinRoom/' + _connectionId + '/@Model.Name'
+      axios.post(URL, null).then(res => {
+          console.log("Joined in room", res);
+      })
+      .catch(err => {
+          console.error("Failed to join in room", err);
+      })
+  }
+
+  // connection.start().then(function(){
+  //     connection.invoke('getConnectionId').then(function(connectionId){
+  //         _connectionId = connectionId
+  //         joinRoom();
+  //     })
+  // })
+  // .catch(function(err){
+  //     console.log(err);
+  // })
 }
 
 document.addEventListener("DOMContentLoaded", chat);
